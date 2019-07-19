@@ -15,6 +15,10 @@ class CreateContactUsersTable extends Migration
     {
         Schema::create('contact_users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('uid')->unique()->comment('contact_id email');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
