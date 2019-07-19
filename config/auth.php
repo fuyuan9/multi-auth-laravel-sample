@@ -46,6 +46,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'contact_user' => [
+            'driver' => 'session',
+            'provider' => 'contact_users',
+        ],
     ],
 
     /*
@@ -75,6 +80,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'contact_users' => [
+            'driver' => 'eloquent',
+            'model' => App\ContactUser::class,
+        ],
     ],
 
     /*
@@ -95,6 +105,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'contact_users' => [
+            'provider' => 'contact_users',
             'table' => 'password_resets',
             'expire' => 60,
         ],
