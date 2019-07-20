@@ -48,6 +48,16 @@ class LoginController extends Controller
         return \Auth::guard('contact_user');
     }
 
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'uid';
+    }
+
     public function logout(Request $request)
     {
         $this->guard('contact_user')->logout();
